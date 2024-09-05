@@ -2,34 +2,39 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApiService } from './services/api.service';
 import { Observable } from 'rxjs';
+import { Pet } from './interface/pet';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'rxjs-error-handling';
 
-  data: string| null = null;
+  data: Pet[] = [];
   error: string | null = null;
   loading:boolean = false;
+  url: string = 'assets/data.json'
 
   constructor(private apiService: ApiService) {}
 
   fetchData() {
-    this.apiService.simulateHttpRequest()
+    this.loading = true;
+
+    this.apiService.simulateHttpRequest(this.url)
     .subscribe({
-      next: response => {
-        this.data = response.data;
-        this.error = null;
-        this.loading = true;
+      next: (response: Pet[]) => {
+        this.data = response;
+        // this.error = null;
+        this.loading = false;
       },
       error: err => {
-        this.data = null;
-        this.error = err;
+        this.error = err.message;
+        this.data = [];
         this.loading = false;
       }
     })

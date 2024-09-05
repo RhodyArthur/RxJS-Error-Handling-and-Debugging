@@ -1,0 +1,32 @@
+[
+    {
+      "petName": "Luna",
+      "image": "./assets/images/luna.jpg",
+      "price": 1200,
+      "breed": "Siamese"
+    },
+    {
+      "petName": "Buddy",
+      "image": "./assets/images/buddy.jpg",
+      "price": 800,
+      "breed": "Golden Retriever"
+    },
+    {
+      "petName": "Charlie",
+      "image": "./assets/images/charlie.jpg",
+      "price": 1500,
+      "breed": "Sphynx"
+    },
+    {
+      "petName": "Bella",
+      "image": "./assets/images/bella.jpg",
+      "price": 950,
+      "breed": "French Bulldog"
+    },
+    {
+      "petName": "Max",
+      "image": "./assets/images/max.jpg",
+      "price": 1100,
+      "breed": "Maine Coon"
+    }
+]

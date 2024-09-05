@@ -1,16 +1,28 @@
 <div class="main-container">
-  <button (click)="fetchData()">Click Me</button>  
+  <h1>RxJs Error Handling and Debugging</h1>
+  <h2>Pet Store</h2>
+  <button (click)="fetchData()">Click To Reveal</button>  
 
   @if (loading) {
-    <p>loading...</p>
+    <div id="spinner">
+      <div class="spinner"></div>
+    </div>
   }
 
   @if (error) {
-    <p>{{error}}</p>
+    <p class="error">Ooops, An error occured: {{error}}</p>
   }
 
-  @if (data) {
-    <p>{{data}}</p>
+  @if (!loading && data) {
+    @for (item of data; track $index) {
+      <div class="content">
+        <img [src]="item.image" alt="an dog image">
+        <p class="name"> {{item.petName}}</p>
+
+        <p class="breed">{{item.breed}}</p>
+        <p class="price">{{item.price | currency}}</p>
+      </div>
+    }
   }
 </div>
 
