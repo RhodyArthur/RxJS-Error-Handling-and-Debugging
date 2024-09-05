@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError, delay, from, map, of, retry, switchMap, tap, throwError, timer } from 'rxjs';
+import { catchError, delay, from, retry, switchMap, tap, throwError, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

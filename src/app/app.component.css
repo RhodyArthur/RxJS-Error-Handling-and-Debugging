@@ -27,7 +27,7 @@ button:hover {
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
-    width: 15rem;
+    width: 18rem;
 }
 
 
@@ -74,6 +74,7 @@ p {
   .error {
     color: red;
     font-style: italic;
+    text-align: center;
   }
 
 /* 
@@ -87,9 +88,18 @@ MEDIA QUERIES
         margin: 3rem auto;
         padding: 2rem;
         border-radius: 20px;
+        gap: 2rem;
     }
 
     .content {
-        width: 22rem;
+        width: 25rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
     }
 }

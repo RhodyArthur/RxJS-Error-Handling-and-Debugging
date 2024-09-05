@@ -29,7 +29,7 @@ export class AppComponent {
     .subscribe({
       next: (response: Pet[]) => {
         this.data = response;
-        // this.error = null;
+        this.error = null;
         this.loading = false;
       },
       error: err => {
