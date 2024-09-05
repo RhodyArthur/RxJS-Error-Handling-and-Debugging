@@ -13,8 +13,8 @@
     <p class="error">Ooops, An error occured: {{error}}</p>
   }
 
-  @if (!loading && data) {
-    @for (item of data; track $index) {
+  @if (!loading && data$) {
+    @for (item of data$; track $index) {
       <div class="content">
         <img [src]="item.image" alt="an dog image">
         <p class="name"> {{item.petName}}</p>

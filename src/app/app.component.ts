@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApiService } from './services/api.service';
-import { Observable } from 'rxjs';
 import { Pet } from './interface/pet';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'rxjs-error-handling';
 
-  data: Pet[] = [];
+  data$: Pet[] = [];
   error: string | null = null;
   loading:boolean = false;
   url: string = 'assets/data.json'
@@ -28,13 +27,13 @@ export class AppComponent {
     this.apiService.simulateHttpRequest(this.url)
     .subscribe({
       next: (response: Pet[]) => {
-        this.data = response;
+        this.data$ = response;
         this.error = null;
         this.loading = false;
       },
       error: err => {
         this.error = err.message;
-        this.data = [];
+        this.data$ = [];
         this.loading = false;
       }
     })

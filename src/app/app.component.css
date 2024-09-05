@@ -18,7 +18,7 @@ button {
 }
 
 button:hover {
-    border: 1px solid white;
+    border: 1px solid #f8efd4;
     cursor: pointer;
 }
 
